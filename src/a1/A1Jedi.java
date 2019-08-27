@@ -32,9 +32,14 @@ public class A1Jedi {
 				int quantity = scan.nextInt();
 				String item = scan.next();
 				int item_index = Arrays.asList(item_name).indexOf(item);
+				
 				item_quantity[item_index] += quantity;
+				
 				boolean contains = IntStream.of(temp).anyMatch(x -> x == item_index);
 				if (contains==false) {
+					num_customer_buy[item_index] += 1;
+				}
+				else if ((item_quantity[item_index]!=0)&&contains==true) {
 					num_customer_buy[item_index] += 1;
 				}
 				temp[k] = item_index;
