@@ -39,7 +39,7 @@ public class A1Jedi {
 				if (contains==false) {
 					num_customer_buy[item_index] += 1;
 				}
-				else if ((item_quantity[item_index]!=0)&&contains==true) {
+				else if (item_quantity[item_index]!=0&&num_customer_buy[item_index]==0) {
 					num_customer_buy[item_index] += 1;
 				}
 				temp[k] = item_index;
