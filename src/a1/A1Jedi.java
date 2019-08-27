@@ -2,6 +2,7 @@ package a1;
 
 import java.util.Arrays;
 import java.util.Scanner;
+import java.util.stream.IntStream;
 
 public class A1Jedi {
 
@@ -26,12 +27,17 @@ public class A1Jedi {
 			scan.next();
 			scan.next();
 			total_product_per_customer = scan.nextInt();
+			int temp[] = new int[total_product_per_customer];
 			for (int k=0; k<total_product_per_customer; k++) {
 				int quantity = scan.nextInt();
 				String item = scan.next();
 				int item_index = Arrays.asList(item_name).indexOf(item);
 				item_quantity[item_index] += quantity;
-				num_customer_buy[item_index] += 1;
+				boolean contains = IntStream.of(temp).anyMatch(x -> x == item_index);
+				if (contains==false) {
+					num_customer_buy[item_index] += 1;
+				}
+				temp[k] = item_index;
 			}
 		}
 		

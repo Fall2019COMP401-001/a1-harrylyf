@@ -51,12 +51,12 @@ public class A1Adept {
 				min_person = costumer_name[j];
 			}
 			total_money += price_sum;
-			
+
 		}
 		
 		String average = String.format ("%.2f", total_money/total_customers);
-		System.out.println("Biggest: "+max_person+" ("+max+")");
-		System.out.println("Smallest: "+min_person+" ("+min+")");
+		System.out.println("Biggest: "+max_person+" ("+String.format("%.2f", max)+")");
+		System.out.println("Smallest: "+min_person+" ("+String.format("%.2f", min)+")");
 		System.out.println("Average: "+average);
 		
 	}
